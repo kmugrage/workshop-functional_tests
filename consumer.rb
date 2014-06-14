@@ -14,7 +14,7 @@ def teardown
 end
 
 def test_search
- @browser.goto "http://qa-consumer.work.shop"
+ @browser.goto "http://localhost/qa/consumer"
  assert @browser.text.include? "consumer"
 end
 
