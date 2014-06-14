@@ -15,7 +15,7 @@ end
 
 def test_search
  @browser.goto "http://qa-consumer.work.shop"
- assert @browser.text.include? "foo"
+ assert @browser.text.include? "consumer"
 end
 
 end
