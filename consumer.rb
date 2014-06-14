@@ -1,16 +1,21 @@
 #!/usr/bin/ruby
 
 require "watir"
+require "test/unit"
 
-test_site = "http://qa-consumer.work.shop"
+class VerifyConsumer < Test::Unit::TestCase
 
-browser = Watir::Browser.new :phantomjs
+def setup
+ @browser ||= Watir::Browser.new :phantomjs
+end
 
-puts "Starting test"
+def teardown
+ @browser.close
+end
 
-browser.goto test_site
+def test_search
+ @browser.goto "http://qa-consumer.work.shop"
+ assert @browser.text.include? "foo"
+end
 
-browser.screenshot.save "consumer.png"
-
-puts "Ending test"
-browser.close
+end
