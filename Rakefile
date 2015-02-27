@@ -1,11 +1,9 @@
 task	:run_all => [:consumer_test, :b2b_test]
 
-task	:consumer_test do
-  watir = "./consumer.rb"
-  sh "#{watir}"
+task	:consumer_test
+
 end
 
-task	:b2b_test do
-  watir = "./b2b.rb"
-  sh "#{watir}"
+task	:b2b_test
+
 end
